@@ -1,0 +1,13 @@
+[build]
+image = "openjdk:17-alpine"
+
+[deploy]
+command = "./mvnw clean package -DskipTests"
+
+[env]
+JAVA_OPTS = "-Xmx256m -Xss512k"
+
+[database]
+name = "foodwaste_db"
+engine = "PostgreSQL"
+version = "14"
