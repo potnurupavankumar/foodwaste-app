@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Food</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(105deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 40%;
+            margin: auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            margin-top: 50px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: #444;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            background: #f5f5f5;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .submit-btn {
+            background: #28a745;
+            color: white;
+        }
+        .submit-btn:hover {
+            background: #218838;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        .home-btn, .receive-btn {
+            background: #007bff;
+            color: white;
+        }
+        .home-btn:hover, .receive-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Post Excess Food</h1>
+    <div class="container">
+        <input type="text" id="senderName" placeholder="Your Name">
+        <input type="text" id="foodName" placeholder="Food Name">
+        <textarea id="description" placeholder="Description"></textarea>
+        <input type="text" id="pickupLocation" placeholder="Pickup Location">
+        <button class="submit-btn" onclick="postFood()">Submit</button>
+        
+        <div class="nav-buttons">
+            <button class="home-btn" onclick="goHome()">Home</button>
+            <button class="receive-btn" onclick="goReceive()">Receive</button>
+        </div>
+    </div>
+
+    <script>
+        async function postFood() {
+            let senderName = document.getElementById("senderName").value;
+            let foodName = document.getElementById("foodName").value;
+            let description = document.getElementById("description").value;
+            let pickupLocation = document.getElementById("pickupLocation").value;
+
+            let response = await fetch('http://localhost:8080/food/post', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ senderName, foodName, description, pickupLocation })
+            });
+
+            if (response.ok) {
+                alert("Food posted successfully!");
+                window.location.href = "index.html"; // Redirect to home page
+            } else {
+                alert("Error posting food.");
+            }
+        }
+
+        function goHome() {
+            window.location.href = "index.html";
+        }
+        function goReceive() {
+            window.location.href = "receive.html";
+        }
+    </script>
+</body>
+</html>

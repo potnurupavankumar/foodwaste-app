@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Waste Reduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: rgb(16, 16, 16);
+            margin: 0;
+            padding: 0;
+        }
+        .title {
+            font-size: 50px;
+            font-weight: bold;
+            color: black;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            -webkit-text-stroke: 1px white;
+        }
+        .container {
+            position: relative;
+            padding: 60px 20px;
+            background-image: url('https://clipground.com/images/clipart-leftovers-9.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+        }
+        .container h1, .container .buttons {
+            position: relative;
+            z-index: 1;
+        }
+        .buttons button {
+            padding: 15px 35px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background: #28a745;
+            color: white;
+            transition: 0.3s;
+        }
+        .buttons button:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+        .section {
+            padding: 80px 20px;
+            border-radius: 12px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        .section h2 {
+            font-size: 36px;
+            color: #333;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            margin: auto;
+            width: 100%;
+        }
+        #sec3{
+background-image: url('https://png.pngtree.com/background/20230413/original/pngtree-food-fruit-border-picture-image_2423211.jpg');
+background-size: cover;
+background-position: center;
+        }
+
+        #sec4{
+background-image: url('http://clipartmag.com/images/healthy-food-border-20.jpg');
+background-size: cover;
+background-position: center;
+        }
+        .box {
+            background: white;
+            color: black;
+            text-align: center;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+        .box:hover {
+            transform: scale(1.05);
+            background: #e9ecef;
+        }
+        .image-text-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+        .image-text-section img {
+            width: 45%;
+            border-radius: 12px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+        .image-text-section img:hover {
+            transform: scale(1.05);
+        }
+        .image-text-section div {
+            width: 50%;
+            text-align: left;
+            font-size: 20px;
+            color: #444;
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .image-text-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .image-text-section img, .image-text-section div {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Food Waste Reduction</h1>
+        <div class="buttons">
+            <button onclick="window.location.href='sender.html'">Sender</button>
+            <button onclick="window.location.href='receiver.html'">Receiver</button>
+        </div>
+    </div>
+
+    <div class="section" id="sec2">
+        <h2>How Our Platform Helps</h2>
+        <div class="grid">
+            <div class="box">
+                <h3>Reduce Food Waste</h3>
+                <p>Share surplus food with people who need it instead of throwing it away.</p>
+            </div>
+            <div class="box">
+                <h3>Connect Communities</h3>
+                <p>Bring together people willing to donate and those in need of food.</p>
+            </div>
+            <div class="box">
+                <h3>Encourage Sustainability</h3>
+                <p>Promote responsible consumption and help save the environment.</p>
+            </div>
+            <div class="box">
+                <h3>Easy to Use</h3>
+                <p>Simple and quick process to post or request food donations.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="sec3">
+        <h2>Why Reducing Food Waste Matters?</h2>
+        <div class="image-text-section">
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/food-donation-5170113-4328379.png" alt="Food Waste Impact">
+            <div>
+                <p>One-third of all food produced globally is wasted. This not only results in financial loss but also contributes to climate change. By reducing food waste, we can help combat hunger and environmental issues.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="sec4">
+        <h2>Impact of Food Waste & How You Can Help</h2>
+        <div class="image-text-section" style="flex-direction: row-reverse;">
+            <img src="https://thumbs.dreamstime.com/z/food-donation-12877177.jpg" alt="How to Help" style="width: 300px; height: 300px;">
+            <div>
+                <p>Food waste contributes to greenhouse gas emissions, deforestation, and loss of biodiversity. By donating excess food, planning meals carefully, and supporting food-sharing platforms like ours, we can make a difference.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

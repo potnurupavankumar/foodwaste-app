@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <div class="mermaid">
+        flowchart TD
+            %% Main Components
+            A[User Interface] --> B{Authentication}
+            B -->|Login| C[User Dashboard]
+            B -->|Register| C
+            
+            %% User Dashboard Flows
+            C --> D{User Role}
+            D -->|Donor| E[Food Donation]
+            D -->|Requester| F[Food Request]
+            D -->|Admin| G[Admin Dashboard]
+            
+            %% Food Donation Flow
+            E --> H[Create Food Post]
+            H --> I[Add Food Details]
+            I --> J[Set Pickup Location]
+            J --> K[Set Expiry Date]
+            K --> L[Post Food Item]
+            
+            %% Food Request Flow
+            F --> M[Search Food Items]
+            M --> N[View Available Food]
+            N --> O[Select Food Item]
+            O --> P[Make Request]
+            P --> Q[Track Request Status]
+            
+            %% Admin Dashboard
+            G --> R[Manage Users]
+            R --> S[Verify Users]
+            R --> T[Manage Posts]
+            T --> U[Approve Posts]
+            T --> V[Remove Posts]
+            
+            %% Database Layer
+            L --> W[FoodPost Repository]
+            Q --> X[Request Repository]
+            U --> Y[Post Repository]
+            
+            %% Styling
+            classDef default fill:#f9f,stroke:#333,stroke-width:2px
+            classDef start fill:#bbf,stroke:#333,stroke-width:4px
+            classDef end fill:#bfb,stroke:#333,stroke-width:4px
+            
+            class A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z start
+            class B,D end
+    </div>
+</body>
+</html>
