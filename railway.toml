@@ -2,7 +2,7 @@
 image = "openjdk:17-alpine"
 
 [deploy]
-command = "./mvnw clean package -DskipTests"
+command = "mvn clean package -DskipTests"
 
 [env]
 JAVA_OPTS = "-Xmx256m -Xss512k"
